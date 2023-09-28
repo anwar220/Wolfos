@@ -18,7 +18,7 @@
 
     const-class v0, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/GcmSpecUtil;
 
-    const-string v1, "javax.crypto.spec.GCMParameterSpec"
+    const-string/jumbo v1, "javax.crypto.spec.GCMParameterSpec"
 
     invoke-static {v0, v1}, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/ClassUtil;->loadClass(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Class;
 
@@ -26,7 +26,7 @@
 
     sput-object v0, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/GcmSpecUtil;->gcmSpecClass:Ljava/lang/Class;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1e
 
     const-string v0, "getTLen"
 
@@ -44,16 +44,16 @@
 
     sput-object v0, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/GcmSpecUtil;->iv:Ljava/lang/reflect/Method;
 
-    goto :goto_22
+    goto :goto_23
 
-    :cond_1d
+    :cond_1e
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/GcmSpecUtil;->tLen:Ljava/lang/reflect/Method;
 
     sput-object v0, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/GcmSpecUtil;->iv:Ljava/lang/reflect/Method;
 
-    :goto_22
+    :goto_23
     return-void
 .end method
 

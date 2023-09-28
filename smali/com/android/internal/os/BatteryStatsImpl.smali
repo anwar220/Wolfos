@@ -46358,7 +46358,7 @@
     .catch Ljava/lang/Exception; {:try_start_928 .. :try_end_92b} :catch_92c
 
     :goto_92b
-    goto :goto_941
+    goto :goto_942
 
     :catch_92c
     move-exception v0
@@ -46370,7 +46370,7 @@
 
     move-object v2, v0
 
-    goto :goto_942
+    goto :goto_943
 
     :catch_931
     move-exception v0
@@ -46378,45 +46378,45 @@
     :try_start_932
     const-string/jumbo v2, "test##>>e"
 
-    const-string v3, "k"
+    const-string/jumbo v3, "k"
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_93a
-    .catchall {:try_start_932 .. :try_end_93a} :catchall_92e
+    :try_end_93b
+    .catchall {:try_start_932 .. :try_end_93b} :catchall_92e
 
     nop
 
-    if-eqz v1, :cond_941
+    if-eqz v1, :cond_942
 
-    :try_start_93d
+    :try_start_93e
     invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
-    :try_end_940
-    .catch Ljava/lang/Exception; {:try_start_93d .. :try_end_940} :catch_92c
+    :try_end_941
+    .catch Ljava/lang/Exception; {:try_start_93e .. :try_end_941} :catch_92c
 
     goto :goto_92b
 
-    :cond_941
-    :goto_941
+    :cond_942
+    :goto_942
     return-void
 
-    :goto_942
-    if-eqz v1, :cond_94a
+    :goto_943
+    if-eqz v1, :cond_94b
 
-    :try_start_944
+    :try_start_945
     invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
-    :try_end_947
-    .catch Ljava/lang/Exception; {:try_start_944 .. :try_end_947} :catch_948
+    :try_end_948
+    .catch Ljava/lang/Exception; {:try_start_945 .. :try_end_948} :catch_949
 
-    :goto_947
-    goto :goto_94a
+    :goto_948
+    goto :goto_94b
 
-    :catch_948
+    :catch_949
     move-exception v0
 
-    goto :goto_947
+    goto :goto_948
 
-    :cond_94a
-    :goto_94a
+    :cond_94b
+    :goto_94b
     throw v2
 .end method
 

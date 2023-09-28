@@ -61,7 +61,7 @@
 
     const-class v0, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/BaseBlockCipher;
 
-    const-string v1, "javax.crypto.spec.GCMParameterSpec"
+    const-string/jumbo v1, "javax.crypto.spec.GCMParameterSpec"
 
     invoke-static {v0, v1}, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/ClassUtil;->loadClass(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Class;
 

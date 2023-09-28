@@ -39,19 +39,19 @@
 
     invoke-direct {p0}, Lcom/android/internal/org/bouncycastle/math/ec/ECFieldElement$AbstractF2m;-><init>()V
 
-    if-eqz p5, :cond_4c
+    if-eqz p5, :cond_4e
 
     invoke-virtual {p5}, Ljava/math/BigInteger;->signum()I
 
     move-result v0
 
-    if-ltz v0, :cond_4c
+    if-ltz v0, :cond_4e
 
     invoke-virtual {p5}, Ljava/math/BigInteger;->bitLength()I
 
     move-result v0
 
-    if-gt v0, p1, :cond_4c
+    if-gt v0, p1, :cond_4e
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
     goto :goto_32
 
     :cond_21
-    if-ge p3, p4, :cond_44
+    if-ge p3, p4, :cond_45
 
     if-lez p3, :cond_3c
 
@@ -106,22 +106,22 @@
     :cond_3c
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "k2 must be larger than 0"
+    const-string/jumbo v1, "k2 must be larger than 0"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_44
+    :cond_45
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "k2 must be smaller than k3"
+    const-string/jumbo v1, "k2 must be smaller than k3"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_4c
+    :cond_4e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "x value invalid in F2m field element"

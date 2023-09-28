@@ -508,17 +508,17 @@
     return-object p0
 
     :cond_23
-    const-string v1, "javascript:"
+    const-string/jumbo v1, "javascript:"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2d
 
     return-object p0
 
-    :cond_2c
+    :cond_2d
     const-string v1, "."
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -527,7 +527,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_3f
+    if-ne v1, v2, :cond_40
 
     const/4 v1, 0x0
 
@@ -541,13 +541,13 @@
 
     move-result-object p0
 
-    :cond_3f
-    :try_start_3f
+    :cond_40
+    :try_start_40
     new-instance v1, Landroid/net/WebAddress;
 
     invoke-direct {v1, p0}, Landroid/net/WebAddress;-><init>(Ljava/lang/String;)V
-    :try_end_44
-    .catch Landroid/net/ParseException; {:try_start_3f .. :try_end_44} :catch_78
+    :try_end_45
+    .catch Landroid/net/ParseException; {:try_start_40 .. :try_end_45} :catch_79
 
     nop
 
@@ -563,7 +563,7 @@
 
     const/4 v3, -0x1
 
-    if-ne v2, v3, :cond_73
+    if-ne v2, v3, :cond_74
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -595,14 +595,14 @@
 
     invoke-virtual {v1, v2}, Landroid/net/WebAddress;->setHost(Ljava/lang/String;)V
 
-    :cond_73
+    :cond_74
     invoke-virtual {v1}, Landroid/net/WebAddress;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    :catch_78
+    :catch_79
     move-exception v1
 
     return-object v0
@@ -853,24 +853,24 @@
 .method public static isJavaScriptUrl(Ljava/lang/String;)Z
     .registers 2
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_d
 
-    const-string v0, "javascript:"
+    const-string/jumbo v0, "javascript:"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_e
 
-    :cond_c
+    :cond_d
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_e
     return v0
 .end method
 

@@ -7188,7 +7188,7 @@
 .method private static getLanguageCodeForValue(I)Ljava/lang/String;
     .registers 2
 
-    packed-switch p0, :pswitch_data_1c
+    packed-switch p0, :pswitch_data_1e
 
     const/4 v0, 0x0
 
@@ -7210,30 +7210,32 @@
     return-object v0
 
     :pswitch_10  #0x4
-    const-string v0, "ja"
+    const-string/jumbo v0, "ja"
 
     return-object v0
 
-    :pswitch_13  #0x3
+    :pswitch_14  #0x3
     const-string v0, "es"
 
     return-object v0
 
-    :pswitch_16  #0x2
+    :pswitch_17  #0x2
     const-string v0, "fr"
 
     return-object v0
 
-    :pswitch_19  #0x1
+    :pswitch_1a  #0x1
     const-string v0, "en"
 
     return-object v0
 
-    :pswitch_data_1c
+    nop
+
+    :pswitch_data_1e
     .packed-switch 0x1
-        :pswitch_19  #00000001
-        :pswitch_16  #00000002
-        :pswitch_13  #00000003
+        :pswitch_1a  #00000001
+        :pswitch_17  #00000002
+        :pswitch_14  #00000003
         :pswitch_10  #00000004
         :pswitch_c  #00000005
         :pswitch_8  #00000006

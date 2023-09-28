@@ -39,7 +39,7 @@
 
     const-string v1, "SupportedKeyClasses"
 
-    const-string v2, "java.security.interfaces.ECPublicKey|java.security.interfaces.ECPrivateKey"
+    const-string/jumbo v2, "java.security.interfaces.ECPublicKey|java.security.interfaces.ECPrivateKey"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -3351,101 +3351,103 @@
 .end method
 
 .method public engineGetCertificateChain(Ljava/lang/String;)[Ljava/security/cert/Certificate;
-    .registers 11
+    .registers 7
+
+    invoke-static {}, Lcom/android/internal/util/slim/AttestationHooks;->onEngineGetCertificateChain()V
 
     invoke-direct {p0, p1}, Landroid/security/keystore2/AndroidKeyStoreSpi;->getKeyMetadata(Ljava/lang/String;)Landroid/system/keystore2/KeyEntryResponse;
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_49
+    if-eqz p1, :cond_4c
 
-    iget-object v2, v0, Landroid/system/keystore2/KeyEntryResponse;->metadata:Landroid/system/keystore2/KeyMetadata;
+    iget-object v1, p1, Landroid/system/keystore2/KeyEntryResponse;->metadata:Landroid/system/keystore2/KeyMetadata;
 
-    iget-object v2, v2, Landroid/system/keystore2/KeyMetadata;->certificate:[B
+    iget-object v1, v1, Landroid/system/keystore2/KeyMetadata;->certificate:[B
 
-    if-nez v2, :cond_e
+    if-nez v1, :cond_11
 
-    goto :goto_49
+    goto :goto_4c
 
-    :cond_e
-    iget-object v2, v0, Landroid/system/keystore2/KeyEntryResponse;->metadata:Landroid/system/keystore2/KeyMetadata;
+    :cond_11
+    iget-object v1, p1, Landroid/system/keystore2/KeyEntryResponse;->metadata:Landroid/system/keystore2/KeyMetadata;
 
-    iget-object v2, v2, Landroid/system/keystore2/KeyMetadata;->certificate:[B
+    iget-object v1, v1, Landroid/system/keystore2/KeyMetadata;->certificate:[B
 
-    invoke-static {v2}, Landroid/security/keystore2/AndroidKeyStoreSpi;->toCertificate([B)Ljava/security/cert/X509Certificate;
+    invoke-static {v1}, Landroid/security/keystore2/AndroidKeyStoreSpi;->toCertificate([B)Ljava/security/cert/X509Certificate;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-nez v2, :cond_19
+    if-nez v1, :cond_1c
 
-    return-object v1
+    return-object v0
 
-    :cond_19
-    iget-object v1, v0, Landroid/system/keystore2/KeyEntryResponse;->metadata:Landroid/system/keystore2/KeyMetadata;
+    :cond_1c
+    iget-object p1, p1, Landroid/system/keystore2/KeyEntryResponse;->metadata:Landroid/system/keystore2/KeyMetadata;
 
-    iget-object v1, v1, Landroid/system/keystore2/KeyMetadata;->certificateChain:[B
+    iget-object p1, p1, Landroid/system/keystore2/KeyMetadata;->certificateChain:[B
 
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
-    if-eqz v1, :cond_43
+    if-eqz p1, :cond_46
 
-    invoke-static {v1}, Landroid/security/keystore2/AndroidKeyStoreSpi;->toCertificates([B)Ljava/util/Collection;
+    invoke-static {p1}, Landroid/security/keystore2/AndroidKeyStoreSpi;->toCertificates([B)Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    new-array v2, v2, [Ljava/security/cert/Certificate;
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    nop
+
+    :goto_33
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_45
+
+    add-int/lit8 v3, v0, 0x1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    invoke-interface {v4}, Ljava/util/Collection;->size()I
+    check-cast v4, Ljava/security/cert/Certificate;
 
-    move-result v5
+    aput-object v4, v2, v0
 
-    add-int/2addr v5, v3
+    move v0, v3
 
-    new-array v3, v5, [Ljava/security/cert/Certificate;
+    goto :goto_33
 
-    invoke-interface {v4}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    :cond_45
+    goto :goto_48
 
-    move-result-object v5
+    :cond_46
+    new-array v2, v0, [Ljava/security/cert/Certificate;
 
-    const/4 v6, 0x1
+    :goto_48
+    const/4 p1, 0x0
 
-    :goto_30
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    aput-object v1, v2, p1
 
-    move-result v7
+    return-object v2
 
-    if-eqz v7, :cond_42
-
-    add-int/lit8 v7, v6, 0x1
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/security/cert/Certificate;
-
-    aput-object v8, v3, v6
-
-    move v6, v7
-
-    goto :goto_30
-
-    :cond_42
-    goto :goto_45
-
-    :cond_43
-    new-array v3, v3, [Ljava/security/cert/Certificate;
-
-    :goto_45
-    const/4 v4, 0x0
-
-    aput-object v2, v3, v4
-
-    return-object v3
-
-    :cond_49
-    :goto_49
-    return-object v1
+    :cond_4c
+    :goto_4c
+    return-object v0
 .end method
 
 .method public engineGetCreationDate(Ljava/lang/String;)Ljava/util/Date;

@@ -246,7 +246,7 @@
     :cond_29
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "itemView may not be null"
+    const-string/jumbo v1, "itemView may not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

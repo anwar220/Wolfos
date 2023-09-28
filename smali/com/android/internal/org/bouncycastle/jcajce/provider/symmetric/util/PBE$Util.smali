@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    const-string v1, "javax.crypto.spec.PBEParameterSpec"
+    const-string/jumbo v1, "javax.crypto.spec.PBEParameterSpec"
 
     invoke-virtual {v0, v1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -110,12 +110,12 @@
     move-result-object v1
 
     check-cast v1, Ljava/security/spec/AlgorithmParameterSpec;
-    :try_end_1d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1d} :catch_1e
+    :try_end_1e
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1e} :catch_1f
 
     return-object v1
 
-    :catch_1e
+    :catch_1f
     move-exception v0
 
     const/4 v1, 0x0

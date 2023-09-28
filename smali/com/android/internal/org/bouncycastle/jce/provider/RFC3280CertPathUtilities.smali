@@ -50,7 +50,7 @@
 
     const-class v0, Lcom/android/internal/org/bouncycastle/jce/provider/RFC3280CertPathUtilities;
 
-    const-string v1, "java.security.cert.PKIXRevocationChecker"
+    const-string/jumbo v1, "java.security.cert.PKIXRevocationChecker"
 
     invoke-static {v0, v1}, Lcom/android/internal/org/bouncycastle/jcajce/provider/symmetric/util/ClassUtil;->loadClass(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Class;
 

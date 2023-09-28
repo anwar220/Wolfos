@@ -377,7 +377,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "java.vm.version"
+    const-string/jumbo v1, "java.vm.version"
 
     invoke-static {v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
@@ -395,16 +395,16 @@
 
     move-result v2
 
-    if-lez v2, :cond_24
+    if-lez v2, :cond_25
 
     move-object v2, v1
 
-    goto :goto_26
+    goto :goto_27
 
-    :cond_24
+    :cond_25
     const-string v2, "1.0"
 
-    :goto_26
+    :goto_27
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     sget-object v2, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -415,7 +415,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_44
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -423,7 +423,7 @@
 
     move-result v3
 
-    if-lez v3, :cond_43
+    if-lez v3, :cond_44
 
     const-string v3, "; "
 
@@ -431,14 +431,14 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_43
+    :cond_44
     sget-object v2, Landroid/os/Build;->ID:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-lez v3, :cond_53
+    if-lez v3, :cond_54
 
     const-string v3, " Build/"
 
@@ -446,7 +446,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_53
+    :cond_54
     const-string v3, ")"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

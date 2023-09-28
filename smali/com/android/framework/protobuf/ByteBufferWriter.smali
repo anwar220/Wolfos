@@ -43,7 +43,7 @@
 
     sput-object v0, Lcom/android/framework/protobuf/ByteBufferWriter;->BUFFER:Ljava/lang/ThreadLocal;
 
-    const-string v0, "java.io.FileOutputStream"
+    const-string/jumbo v0, "java.io.FileOutputStream"
 
     invoke-static {v0}, Lcom/android/framework/protobuf/ByteBufferWriter;->safeGetClass(Ljava/lang/String;)Ljava/lang/Class;
 

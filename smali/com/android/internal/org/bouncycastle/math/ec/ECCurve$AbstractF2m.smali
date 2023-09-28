@@ -39,7 +39,7 @@
 .method private static buildField(IIII)Lcom/android/internal/org/bouncycastle/math/field/FiniteField;
     .registers 9
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_49
 
     const/4 v0, 0x2
 
@@ -49,7 +49,7 @@
 
     const/4 v3, 0x0
 
-    if-nez p2, :cond_1f
+    if-nez p2, :cond_20
 
     if-nez p3, :cond_17
 
@@ -70,16 +70,16 @@
     :cond_17
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "k3 must be 0 if k2 == 0"
+    const-string/jumbo v1, "k3 must be 0 if k2 == 0"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_1f
-    if-le p2, p1, :cond_3e
+    :cond_20
+    if-le p2, p1, :cond_40
 
-    if-le p3, p2, :cond_36
+    if-le p3, p2, :cond_37
 
     const/4 v4, 0x5
 
@@ -103,28 +103,28 @@
 
     return-object v0
 
-    :cond_36
+    :cond_37
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "k3 must be > k2"
+    const-string/jumbo v1, "k3 must be > k2"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_3e
+    :cond_40
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "k2 must be > k1"
+    const-string/jumbo v1, "k2 must be > k1"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_46
+    :cond_49
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "k1 must be > 0"
+    const-string/jumbo v1, "k1 must be > 0"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

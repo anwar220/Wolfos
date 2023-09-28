@@ -34,10 +34,10 @@
 
     sput-object v0, Lcom/android/internal/org/bouncycastle/crypto/digests/AndroidDigestFactory;->CONSCRYPT:Lcom/android/internal/org/bouncycastle/crypto/digests/AndroidDigestFactoryInterface;
 
-    goto :goto_30
+    goto :goto_31
 
     :cond_17
-    const-string v0, "java.vendor"
+    const-string/jumbo v0, "java.vendor"
 
     const-string v1, ""
 
@@ -57,16 +57,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_32
 
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/internal/org/bouncycastle/crypto/digests/AndroidDigestFactory;->CONSCRYPT:Lcom/android/internal/org/bouncycastle/crypto/digests/AndroidDigestFactoryInterface;
 
-    :goto_30
+    :goto_31
     return-void
 
-    :cond_31
+    :cond_32
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Provider AndroidOpenSSL must exist"

@@ -552,7 +552,7 @@
 .end method
 
 .method public static newApplication(Ljava/lang/Class;Landroid/content/Context;)Landroid/app/Application;
-    .registers 3
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -574,13 +574,21 @@
 
     invoke-virtual {p0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Landroid/app/Application;
+    check-cast p0, Landroid/app/Application;
 
-    invoke-virtual {v0, p1}, Landroid/app/Application;->attach(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Landroid/app/Application;->attach(Landroid/content/Context;)V
 
-    return-object v0
+    invoke-static {p0}, Lcom/android/internal/util/slim/AttestationHooks;->initApplicationBeforeOnCreate(Landroid/app/Application;)V
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/android/internal/util/slim/PixelPropsUtils;->setProps(Ljava/lang/String;)V
+
+    return-object p0
 .end method
 
 .method private notifyStartActivityResult(ILandroid/os/Bundle;)V
@@ -3615,11 +3623,19 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/app/AppComponentFactory;->instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, p3}, Landroid/app/Application;->attach(Landroid/content/Context;)V
+    invoke-virtual {p1, p3}, Landroid/app/Application;->attach(Landroid/content/Context;)V
 
-    return-object v0
+    invoke-static {p1}, Lcom/android/internal/util/slim/AttestationHooks;->initApplicationBeforeOnCreate(Landroid/app/Application;)V
+
+    invoke-virtual {p3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lcom/android/internal/util/slim/PixelPropsUtils;->setProps(Ljava/lang/String;)V
+
+    return-object p1
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V

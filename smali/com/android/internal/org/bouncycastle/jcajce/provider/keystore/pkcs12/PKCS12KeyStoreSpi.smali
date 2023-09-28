@@ -2157,7 +2157,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_3d
+    if-ltz v0, :cond_3e
 
     const-string v1, "com.android.internal.org.bouncycastle.pkcs12.max_it_count"
 
@@ -2165,7 +2165,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3d
 
     invoke-virtual {v1}, Ljava/math/BigInteger;->intValue()I
 
@@ -2173,7 +2173,7 @@
 
     if-lt v2, v0, :cond_15
 
-    goto :goto_3c
+    goto :goto_3d
 
     :cond_15
     new-instance v2, Ljava/lang/IllegalStateException;
@@ -2182,7 +2182,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "iteration count "
+    const-string/jumbo v4, "iteration count "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2214,11 +2214,11 @@
 
     throw v2
 
-    :cond_3c
-    :goto_3c
+    :cond_3d
+    :goto_3d
     return v0
 
-    :cond_3d
+    :cond_3e
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v2, "negative iteration count found"

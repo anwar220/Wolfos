@@ -200,7 +200,7 @@
 .method static createPathClassLoader(Ljava/lang/String;I)Ljava/lang/ClassLoader;
     .registers 11
 
-    const-string v0, "java.library.path"
+    const-string/jumbo v0, "java.library.path"
 
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2810,7 +2810,7 @@
 
     invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    const-string v1, "jnigraphics"
+    const-string/jumbo v1, "jnigraphics"
 
     invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
@@ -2820,23 +2820,23 @@
 
     invoke-virtual {v1}, Lcom/android/internal/os/ZygoteInitStub;->loadSoBridge()V
 
-    :try_start_1d
+    :try_start_1e
     const-string/jumbo v1, "qti_performance"
 
     invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_23
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_1d .. :try_end_23} :catch_24
+    :try_end_24
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_1e .. :try_end_24} :catch_25
 
-    goto :goto_2a
+    goto :goto_2b
 
-    :catch_24
+    :catch_25
     move-exception v1
 
     const-string v2, "Couldn\'t load qti_performance"
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_2a
+    :goto_2b
     return-void
 .end method
 

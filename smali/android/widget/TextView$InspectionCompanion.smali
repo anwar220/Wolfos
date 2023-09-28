@@ -830,7 +830,7 @@
 
     invoke-direct {v5, v3}, Landroid/view/View$InspectionCompanion$$ExternalSyntheticLambda0;-><init>(Landroid/util/SparseArray;)V
 
-    const-string v6, "justificationMode"
+    const-string/jumbo v6, "justificationMode"
 
     const v8, 0x1010567
 
