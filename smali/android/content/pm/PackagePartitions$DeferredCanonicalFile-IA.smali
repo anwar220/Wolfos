@@ -1,4 +1,0 @@
-# classes.dex
-
-.class public final synthetic Landroid/content/pm/PackagePartitions$DeferredCanonicalFile-IA;
-.super Ljava/lang/Object;
