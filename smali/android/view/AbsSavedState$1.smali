@@ -1,0 +1,27 @@
+# classes3.dex
+
+.class Landroid/view/AbsSavedState$1;
+.super Landroid/view/AbsSavedState;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/view/AbsSavedState;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 2
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/view/AbsSavedState;-><init>(Landroid/view/AbsSavedState-IA;)V
+
+    return-void
+.end method

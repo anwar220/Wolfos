@@ -1,0 +1,4 @@
+# classes.dex
+
+.class public final synthetic Landroid/content/pm/split/SplitDependencyLoader$IllegalDependencyException-IA;
+.super Ljava/lang/Object;

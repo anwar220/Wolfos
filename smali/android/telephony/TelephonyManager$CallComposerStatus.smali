@@ -1,0 +1,18 @@
+# classes3.dex
+
+.class public interface abstract annotation Landroid/telephony/TelephonyManager$CallComposerStatus;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/telephony/TelephonyManager;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x2609
+    name = "CallComposerStatus"
+.end annotation

@@ -1,0 +1,26 @@
+# classes2.dex
+
+.class public interface abstract Landroid/media/soundtrigger/ISoundTriggerDetectionServiceClient;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/media/soundtrigger/ISoundTriggerDetectionServiceClient$Stub;,
+        Landroid/media/soundtrigger/ISoundTriggerDetectionServiceClient$Default;
+    }
+.end annotation
+
+
+# virtual methods
+.method public abstract onOpFinished(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method

@@ -1,0 +1,26 @@
+# classes2.dex
+
+.class public interface abstract Landroid/hardware/location/IGeofenceHardwareMonitorCallback;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/hardware/location/IGeofenceHardwareMonitorCallback$Stub;,
+        Landroid/hardware/location/IGeofenceHardwareMonitorCallback$Default;
+    }
+.end annotation
+
+
+# virtual methods
+.method public abstract onMonitoringSystemChange(Landroid/hardware/location/GeofenceHardwareMonitorEvent;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method

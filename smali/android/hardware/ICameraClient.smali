@@ -1,0 +1,16 @@
+# classes.dex
+
+.class public interface abstract Landroid/hardware/ICameraClient;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/hardware/ICameraClient$Stub;,
+        Landroid/hardware/ICameraClient$Default;
+    }
+.end annotation

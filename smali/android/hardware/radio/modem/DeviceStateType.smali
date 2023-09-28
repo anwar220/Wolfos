@@ -1,0 +1,23 @@
+# classes2.dex
+
+.class public interface abstract annotation Landroid/hardware/radio/modem/DeviceStateType;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/hardware/radio/modem/DeviceStateType$$;
+    }
+.end annotation
+
+
+# static fields
+.field public static final CHARGING_STATE:I = 0x1
+
+.field public static final LOW_DATA_EXPECTED:I = 0x2
+
+.field public static final POWER_SAVE_MODE:I

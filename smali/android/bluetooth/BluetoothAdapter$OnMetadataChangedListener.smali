@@ -1,0 +1,23 @@
+# classes.dex
+
+.class public interface abstract Landroid/bluetooth/BluetoothAdapter$OnMetadataChangedListener;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation runtime Landroid/annotation/SystemApi;
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/bluetooth/BluetoothAdapter;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "OnMetadataChangedListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract onMetadataChanged(Landroid/bluetooth/BluetoothDevice;I[B)V
+.end method

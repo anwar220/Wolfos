@@ -1,0 +1,339 @@
+# classes3.dex
+
+.class public final Landroid/stats/devicepolicy/nano/StringList;
+.super Lcom/android/framework/protobuf/nano/MessageNano;
+
+
+# static fields
+.field private static volatile _emptyArray:[Landroid/stats/devicepolicy/nano/StringList;
+
+
+# instance fields
+.field public stringValue:[Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Lcom/android/framework/protobuf/nano/MessageNano;-><init>()V
+
+    invoke-virtual {p0}, Landroid/stats/devicepolicy/nano/StringList;->clear()Landroid/stats/devicepolicy/nano/StringList;
+
+    return-void
+.end method
+
+.method public static emptyArray()[Landroid/stats/devicepolicy/nano/StringList;
+    .registers 2
+
+    sget-object v0, Landroid/stats/devicepolicy/nano/StringList;->_emptyArray:[Landroid/stats/devicepolicy/nano/StringList;
+
+    if-nez v0, :cond_15
+
+    sget-object v0, Lcom/android/framework/protobuf/nano/InternalNano;->LAZY_INIT_LOCK:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_7
+    sget-object v1, Landroid/stats/devicepolicy/nano/StringList;->_emptyArray:[Landroid/stats/devicepolicy/nano/StringList;
+
+    if-nez v1, :cond_10
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Landroid/stats/devicepolicy/nano/StringList;
+
+    sput-object v1, Landroid/stats/devicepolicy/nano/StringList;->_emptyArray:[Landroid/stats/devicepolicy/nano/StringList;
+
+    :cond_10
+    monitor-exit v0
+
+    goto :goto_15
+
+    :catchall_12
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_14
+    .catchall {:try_start_7 .. :try_end_14} :catchall_12
+
+    throw v1
+
+    :cond_15
+    :goto_15
+    sget-object v0, Landroid/stats/devicepolicy/nano/StringList;->_emptyArray:[Landroid/stats/devicepolicy/nano/StringList;
+
+    return-object v0
+.end method
+
+.method public static parseFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Landroid/stats/devicepolicy/nano/StringList;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    new-instance v0, Landroid/stats/devicepolicy/nano/StringList;
+
+    invoke-direct {v0}, Landroid/stats/devicepolicy/nano/StringList;-><init>()V
+
+    invoke-virtual {v0, p0}, Landroid/stats/devicepolicy/nano/StringList;->mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Landroid/stats/devicepolicy/nano/StringList;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static parseFrom([B)Landroid/stats/devicepolicy/nano/StringList;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/framework/protobuf/nano/InvalidProtocolBufferNanoException;
+        }
+    .end annotation
+
+    new-instance v0, Landroid/stats/devicepolicy/nano/StringList;
+
+    invoke-direct {v0}, Landroid/stats/devicepolicy/nano/StringList;-><init>()V
+
+    invoke-static {v0, p0}, Lcom/android/framework/protobuf/nano/MessageNano;->mergeFrom(Lcom/android/framework/protobuf/nano/MessageNano;[B)Lcom/android/framework/protobuf/nano/MessageNano;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/stats/devicepolicy/nano/StringList;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public clear()Landroid/stats/devicepolicy/nano/StringList;
+    .registers 2
+
+    sget-object v0, Lcom/android/framework/protobuf/nano/WireFormatNano;->EMPTY_STRING_ARRAY:[Ljava/lang/String;
+
+    iput-object v0, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Landroid/stats/devicepolicy/nano/StringList;->cachedSize:I
+
+    return-object p0
+.end method
+
+.method protected computeSerializedSize()I
+    .registers 7
+
+    invoke-super {p0}, Lcom/android/framework/protobuf/nano/MessageNano;->computeSerializedSize()I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    if-eqz v1, :cond_26
+
+    array-length v1, v1
+
+    if-lez v1, :cond_26
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    :goto_e
+    iget-object v4, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    array-length v5, v4
+
+    if-ge v3, v5, :cond_22
+
+    aget-object v4, v4, v3
+
+    if-eqz v4, :cond_1f
+
+    add-int/lit8 v1, v1, 0x1
+
+    nop
+
+    invoke-static {v4}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->computeStringSizeNoTag(Ljava/lang/String;)I
+
+    move-result v5
+
+    add-int/2addr v2, v5
+
+    :cond_1f
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_e
+
+    :cond_22
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v3, v1, 0x1
+
+    add-int/2addr v0, v3
+
+    :cond_26
+    return v0
+.end method
+
+.method public mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Landroid/stats/devicepolicy/nano/StringList;
+    .registers 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    :goto_0
+    invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readTag()I
+
+    move-result v0
+
+    sparse-switch v0, :sswitch_data_42
+
+    invoke-static {p1, v0}, Lcom/android/framework/protobuf/nano/WireFormatNano;->parseUnknownField(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_40
+
+    return-object p0
+
+    :sswitch_e
+    const/16 v1, 0xa
+
+    invoke-static {p1, v1}, Lcom/android/framework/protobuf/nano/WireFormatNano;->getRepeatedFieldArrayLength(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;I)I
+
+    move-result v1
+
+    iget-object v2, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_1b
+
+    move v4, v3
+
+    goto :goto_1c
+
+    :cond_1b
+    array-length v4, v2
+
+    :goto_1c
+    add-int v5, v4, v1
+
+    new-array v5, v5, [Ljava/lang/String;
+
+    if-eqz v4, :cond_25
+
+    invoke-static {v2, v3, v5, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_25
+    :goto_25
+    array-length v2, v5
+
+    add-int/lit8 v2, v2, -0x1
+
+    if-ge v4, v2, :cond_36
+
+    invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v5, v4
+
+    invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readTag()I
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_25
+
+    :cond_36
+    invoke-virtual {p1}, Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v5, v4
+
+    iput-object v5, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    goto :goto_40
+
+    :sswitch_3f
+    return-object p0
+
+    :cond_40
+    :goto_40
+    goto :goto_0
+
+    nop
+
+    :sswitch_data_42
+    .sparse-switch
+        0x0 -> :sswitch_3f
+        0xa -> :sswitch_e
+    .end sparse-switch
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Lcom/android/framework/protobuf/nano/MessageNano;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Landroid/stats/devicepolicy/nano/StringList;->mergeFrom(Lcom/android/framework/protobuf/nano/CodedInputByteBufferNano;)Landroid/stats/devicepolicy/nano/StringList;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public writeTo(Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;)V
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    iget-object v0, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    if-eqz v0, :cond_18
+
+    array-length v0, v0
+
+    if-lez v0, :cond_18
+
+    const/4 v0, 0x0
+
+    :goto_8
+    iget-object v1, p0, Landroid/stats/devicepolicy/nano/StringList;->stringValue:[Ljava/lang/String;
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_18
+
+    aget-object v1, v1, v0
+
+    if-eqz v1, :cond_15
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1, v2, v1}, Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;->writeString(ILjava/lang/String;)V
+
+    :cond_15
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_8
+
+    :cond_18
+    invoke-super {p0, p1}, Lcom/android/framework/protobuf/nano/MessageNano;->writeTo(Lcom/android/framework/protobuf/nano/CodedOutputByteBufferNano;)V
+
+    return-void
+.end method

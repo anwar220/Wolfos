@@ -1,0 +1,26 @@
+# classes.dex
+
+.class public interface abstract Landroid/hardware/display/IDisplayManagerCallback;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/hardware/display/IDisplayManagerCallback$Stub;,
+        Landroid/hardware/display/IDisplayManagerCallback$Default;
+    }
+.end annotation
+
+
+# virtual methods
+.method public abstract onDisplayEvent(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method

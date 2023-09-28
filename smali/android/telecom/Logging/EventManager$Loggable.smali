@@ -1,0 +1,23 @@
+# classes3.dex
+
+.class public interface abstract Landroid/telecom/Logging/EventManager$Loggable;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/telecom/Logging/EventManager;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "Loggable"
+.end annotation
+
+
+# virtual methods
+.method public abstract getDescription()Ljava/lang/String;
+.end method
+
+.method public abstract getId()Ljava/lang/String;
+.end method
